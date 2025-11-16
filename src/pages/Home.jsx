@@ -23,11 +23,11 @@ export default function Home() {
       {/* CTA Buttons */}
       <div className="flex gap-4 mt-8">
 
-        <HoverButton href="/upload">
+        <HoverButton to="/Upload">
           Upload CSV
         </HoverButton>
 
-        <HoverButton href="/learn">
+        <HoverButton to="/learn">
           Learn More
         </HoverButton>
 

@@ -1,25 +1,27 @@
+import { Routes, Route } from "react-router-dom"; 
 import Home from "./pages/Home";
 import BeamsBackground from "./components/BeamsBackground";
 import StaggeredMenu from "./components/StaggeredMenu";
 import logo from "./assets/Logo_Test.png";
+import Upload from "./pages/Upload";
 
 export default function App() {
 
   const menuItems = [
     { label: "Home", ariaLabel: "Go to home page", link: "/" },
-    { label: "Upload Data", ariaLabel: "Upload telemetry", link: "/upload" },
+    { label: "Upload Data", ariaLabel: "Upload telemetry", link: "/Upload" },
     { label: "Viewer", ariaLabel: "View telemetry", link: "/viewer" },
   ];
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
 
-      {/* Background */}
-      <div className="absolute inset-0">
+      {/* Background - MUST be behind everything */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
         <BeamsBackground rotation={45} />
       </div>
 
-      {/* Menu (top-right toggle) */}
+      {/* Menu Overlay */}
       <div className="absolute inset-0 z-40 pointer-events-none">
         <StaggeredMenu
           className="pointer-events-auto"
@@ -40,8 +42,12 @@ export default function App() {
         />
       </div>
 
-      {/* Home Page Content */}
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Upload" element={<Upload />} />
+        <Route path="/viewer" element={<div className="text-white p-10">Viewer Coming Soon</div>} />
+      </Routes>
+
     </div>
   );
 }
