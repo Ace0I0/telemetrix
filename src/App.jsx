@@ -1,6 +1,7 @@
 import Home from "./pages/Home";
 import BeamsBackground from "./components/BeamsBackground";
 import StaggeredMenu from "./components/StaggeredMenu";
+import logo from "./assets/Logo_Test.png";
 
 export default function App() {
 
@@ -22,14 +23,20 @@ export default function App() {
       <div className="absolute inset-0 z-40 pointer-events-none">
         <StaggeredMenu
           className="pointer-events-auto"
+          logoUrl={logo}
           position="right"
           items={menuItems}
-          socialItems={[]}
-          displaySocials={false}
-          displayItemNumbering={false}
+          socialItems={[
+            { label: 'GitHub', link: 'https://github.com/Ace0I0/telemetrix' },
+            { label: 'MoTeC', link: 'https://www.motec.com.au/downloads' }
+          ]}
+          displaySocials={true}
+          displayItemNumbering={true}
+
           menuButtonColor="#fff"
-          openMenuButtonColor="#fff"
-          accentColor="#ffffff"
+          openMenuButtonColor="#100f0f"
+          accentColor="#1e3a8a"
+          colors={["#000000", "#1a1a1a"]}
         />
       </div>
 

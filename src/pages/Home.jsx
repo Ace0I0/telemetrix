@@ -1,3 +1,5 @@
+import HoverButton from "../components/HoverButton";
+
 export default function Home() {
   return (
     <div className="relative z-10 w-full h-screen flex flex-col items-center justify-center text-center px-6">
@@ -20,16 +22,15 @@ export default function Home() {
 
       {/* CTA Buttons */}
       <div className="flex gap-4 mt-8">
-        <button className="px-6 py-3 bg-white text-black rounded-full 
-                           font-semibold shadow-lg hover:bg-gray-200">
-          Upload CSV
-        </button>
 
-        <button className="px-6 py-3 backdrop-blur-md bg-white/10 
-                           border border-white/20 rounded-full 
-                           text-white font-semibold hover:bg-white/20">
+        <HoverButton href="/upload">
+          Upload CSV
+        </HoverButton>
+
+        <HoverButton href="/learn">
           Learn More
-        </button>
+        </HoverButton>
+
       </div>
     </div>
   );
